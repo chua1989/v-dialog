@@ -1,25 +1,28 @@
 <template>
-    <div v-if="visible" :class="$style.mask" :style="{zIndex: zIndex}">
-        <div :class="$style.dialog">
-            <div :class="$style.head" :style="{ backgroundColor: themeColor}">
-                <div :class="$style.title">{{title}}</div>
+    <div v-if="visible" class="mask" :style="{zIndex: zIndex}">
+        <div class="dialog">
+            <div class="head" :style="{ backgroundColor: themeColor}">
+                <div class="title">{{title}}</div>
                 <slot name="header"></slot>
-                <icon :class="$style.close" name="icon-x" @click="handleClose"></icon>
+                <icon class="close" name="icon-x" @click="handleClose"></icon>
             </div>
-            <div :class="$style.body">
+            <div class="body">
                 <slot name="body"></slot>
-                <div :class="$style.content">{{msg}}</div>
+                <div class="content">{{msg}}</div>
             </div>
-            <div :class="$style.foot">
+            <div class="foot">
                 <slot name="foot"></slot>
                 <input v-if="hasNo"
-                       :class="$style.no"
+                       class="no"
                        :value="noText"
                        type="button"
                        @click="handleNo" >
                 <input v-if="hasYes"
-                       :class="$style.yes"
-                       :style="{backgroundColor: themeColor}"
+                       class="yes"
+                       :style="{
+                           backgroundColor: themeColor,
+                           borderColor: themeColor
+                       }"
                        :value="yesText"
                        type="button"
                        autofocus
@@ -122,9 +125,7 @@ export default {
 }
 </script>
 
-<style lang="scss" module>
-    @import "Assets/css/color.scss";
-    @import "Assets/css/z-index.scss";
+<style lang="scss" scoped>
     .mask{
         position: fixed;
         top: 0;
@@ -199,13 +200,14 @@ export default {
             text-align: right;
             .no,
             .yes{
-                padding: 12px 44px ;
+                padding: 10px 44px ;
                 font-size: 16px;
                 cursor: pointer;
                 height: auto;
                 text-indent: 0;
                 border-radius: 20px;
                 line-height: 16px;
+                border: 2px solid transparent;
             }
             .no{
                 padding: 10px 44px ;

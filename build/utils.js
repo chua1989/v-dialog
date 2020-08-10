@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const merge = require('webpack-merge');
 
-const PagePath = path.resolve(__dirname, '../src/pages');
+const PagePath = path.resolve(__dirname, '../demo');
 const config = require('./config');
 
 exports.assetsPath = function (_path) {

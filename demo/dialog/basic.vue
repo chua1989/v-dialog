@@ -13,7 +13,7 @@ export default {
             hasYes: true,
             yesText: '确定',
             noText: '取消',
-            themeColor: 'blue',
+            themeColor: '#00C2B3',
             zIndex: 50,
             onClose: () => {
                 console.log('after close')
