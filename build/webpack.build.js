@@ -12,11 +12,6 @@ const env = process.env.NODE_ENV = process.argv[2] || 'dev';// 设置环境变�
 
 const webpackConfig= merge(common, {
 	devtool: 'cheap-module-source-map',//开发环境使用inline-source-map
-	output: {
-	    path: config.outPath,
-	    filename: utils.assetsPath('js/[name].[chunkhash].js'),
-	    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
-	},
 	plugins:[
 		new MiniCssExtractPlugin({
 			filename: utils.assetsPath('css/[name].[contenthash].css'),

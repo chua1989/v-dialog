@@ -2,10 +2,10 @@
   "name": "v-dialog",
   "version": "1.0.0",
   "description": "基于vue2的dialog组件",
-  "main": "src/dialog/dialog.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "node ./build/dev-server.js",
-    "build": "node ./build/build.js"
+    "build": "node ./build/build.js prod"
   },
   "repository": {
     "type": "git",

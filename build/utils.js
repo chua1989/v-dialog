@@ -4,8 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const merge = require('webpack-merge');
 
-const PagePath = path.resolve(__dirname, '../demo');
+const env = process.env.NODE_ENV = process.argv[2] || 'dev';// 设置环境变量
+
 const config = require('./config');
+const PagePath = config[env].sourceDir;
 
 exports.assetsPath = function (_path) {
   const assetsSubDirectory = config.assetsSubDirectory
