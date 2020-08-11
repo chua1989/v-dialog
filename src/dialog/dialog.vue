@@ -42,6 +42,10 @@ export default {
         Icon
     },
     props: {
+        isShow: {
+            type: Boolean,
+            default: false
+        },
         title: {
             type: String,
             default: '消息提示'
@@ -66,6 +70,15 @@ export default {
             type: String,
             default: '确定'
         },
+        // 主题颜色
+        themeColor: {
+            type: String,
+            default: '#409eff'
+        },
+        zIndex: {
+            type: Number,
+            default: 100
+        },
         onNo: {
             type: Function,
             default: () => {}
@@ -77,19 +90,6 @@ export default {
         onClose: {
             type: Function,
             default: () => {}
-        },
-        isShow: {
-            type: Boolean,
-            default: false
-        },
-        // 主题颜色
-        themeColor: {
-            type: String,
-            default: '#409eff'
-        },
-        zIndex: {
-            type: Number,
-            default: 100
         }
     },
     data() {
@@ -118,14 +118,17 @@ export default {
         handleClose() {
             this.visible = false;
             this.onClose();
+            this.$emit('onClose')
         },
         handleNo() {
             this.visible = false;
             this.onNo();
+            this.$emit('onNo')
         },
         handleYes() {
             this.visible = false;
             this.onYes();
+            this.$emit('onYes')
         }
     }
 }
@@ -214,6 +217,12 @@ export default {
                 border-radius: 20px;
                 line-height: 16px;
                 border: 2px solid transparent;
+
+                outline-style: none; /*取消focus外边框 */
+                -webkit-user-select: auto; /*webkit浏览器*/
+                outline: none;
+                -webkit-appearance: none; /*去除系统默认的样式,比如iphone上的上边框*/
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 点击高亮的颜色*/
             }
             .no{
                 padding: 10px 44px ;

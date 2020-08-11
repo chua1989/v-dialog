@@ -1,7 +1,8 @@
 <template>
     <div id="app">
         <h2>demos</h2>
-        <router-link to="/dialog/basic">dialog basic</router-link>
+        <router-link to="/dialog/basic">dialog basic</router-link><br>
+        <router-link to="/dialog/html-com">dialog vue components</router-link>
         <router-view></router-view>
     </div>
 </template>

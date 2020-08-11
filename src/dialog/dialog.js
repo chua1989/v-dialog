@@ -3,10 +3,10 @@
  * date: 2019.8.21
  * description: 简单错误/信息提示框
  * eg:
-    import dialog from 'H5Coms/dialog/dialog.js';
-    // 初始化一个dialog实例，可以有多个，同一个实例同时只展示一次
-    let Dialog = dialog();
-    Dialog({
+    import {$dialog} from 'v-dialog';
+    // $dialog多次被调用，只展示最开始的那个
+    Vue.prototype.$dialog = $dialog;
+    $dialog({
         msg: '警告！',
         hasNo: false, // 是否有no按钮
         hasYes: true, // 是否有yes按钮
@@ -22,7 +22,7 @@ import Dialog from './dialog.vue';
 let DialogExtend = Vue.extend(Dialog);
 
 // 所有的dialog应当只有一个实例
-export default function DialogPup() {
+function DialogPup() {
     let instance; // 实例
     return function(options = {}) {
         // 如果dialog正在展示，则不做任何处理
@@ -36,3 +36,5 @@ export default function DialogPup() {
         document.body.appendChild(instance.$el);
     }
 }
+
+export default DialogPup()
