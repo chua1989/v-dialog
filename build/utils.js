@@ -1,11 +1,9 @@
 const glob = require('glob');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const merge = require('webpack-merge');
 
 const env = process.env.NODE_ENV = process.argv[2] || 'dev';// 设置环境变量
-
 const config = require('./config');
 const PagePath = config[env].sourceDir;
 
@@ -137,11 +135,11 @@ exports.cssLoaders = function(env){
                 // 这里匹配 `<style module>`
                 {
                     resourceQuery: /module/,
-                    use: [MiniCssExtractPlugin.loader, cssModulesLoader, 'postcss-loader']
+                    use: [cssModulesLoader, 'postcss-loader']
                 },
                 // 这里匹配普通的 `<style>` 或 `<style scoped>`或其他外部css
                 {
-                    use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+                    use: ['css-loader', 'postcss-loader']
                 }
             ]
         },
@@ -151,11 +149,11 @@ exports.cssLoaders = function(env){
                 // 这里匹配 `<style module>`
                 {
                     resourceQuery: /module/,
-                    use: [MiniCssExtractPlugin.loader, cssModulesLoader, 'postcss-loader', 'sass-loader']
+                    use: [cssModulesLoader, 'postcss-loader', 'sass-loader']
                 },
                 // 这里匹配普通的 `<style>` 或 `<style scoped>`或者其他外部scss
                 {
-                    use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+                    use: ['css-loader', 'postcss-loader', 'sass-loader']
                 }
             ]
         }]

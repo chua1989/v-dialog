@@ -76,17 +76,6 @@ module.exports =  {
                     limit: 100,
                     name: utils.assetsPath('img/[name].[hash:7].[ext]'),
                 }
-            },
-            {
-                test: /\.html$/,
-                use: {
-                    loader: 'html-loader',
-                    options: {
-                        // ignoreCustomFragments: [],
-                        root: path.resolve(__dirname, '../demo'),// html中引用时直接使用"/assets/img/xxx.ico"这样子
-                        attrs: ['img:src', 'link:href']
-                    }
-                }
             }
         ]
     },
@@ -101,8 +90,7 @@ module.exports =  {
             }
         }),
         // 请确保引入这个插件！
-        new VueLoaderPlugin(),
-        ...utils.htmlPlugin()//html页面处理
+        new VueLoaderPlugin()
     ]
 };
 

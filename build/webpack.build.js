@@ -1,9 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const UglifyJsPlugin = require('terser-webpack-plugin');
-const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = require('./config.js');
 const utils = require('./utils.js');
@@ -12,34 +9,23 @@ const env = process.env.NODE_ENV = process.argv[2] || 'dev';// 设置环境变�
 
 const webpackConfig= merge(common, {
 	devtool: 'cheap-module-source-map',//开发环境使用inline-source-map
-	plugins:[
-		new MiniCssExtractPlugin({
-			filename: utils.assetsPath('css/[name].[contenthash].css'),
-			allChunks: true,
-	    }),
-	    new OptimizeCSSPlugin({
-	        cssProcessorOptions: { safe: true }
-	    })
-	],
+	entry: {
+		index: path.resolve(__dirname, '../src/index.js')
+	},
+	externals: {
+		Vue: 'vue'
+	},
+	output: {
+		filename: '[name].js',
+		// chunkFilename: 'chunks/[name].js',
+		path: config.outPath,
+		publicPath: '/',
+		library: 'v-dialog', // library指定的就是你使用require时的模块名，这里便是require("PayKeyboard")
+		libraryTarget: 'umd', //libraryTarget会生成不同umd的代码,可以只是commonjs标准的，也可以是指amd标准的，也可以只是通过script标签引入的。
+		umdNamedDefine: true
+	},
 	//生产模式，代码压缩,查看//webpack.js.org/configuration/mode/#root
-	mode: 'production',
-    //提取公共chunk,避免多入口打入相同的公用代码
-    //详细查看//webpack.js.org/plugins/split-chunks-plugin/
-    optimization:{
-        //提取manifest
-        runtimeChunk: {
-          name: 'manifest'
-        },
-        //提取其他公用chunk
-        splitChunks: {
-            chunks: 'all',
-        },
-        minimizer: [
-	      	new UglifyJsPlugin({
-	        	sourceMap: true
-	      	})
-	    ]
-    }
+	mode: 'development',// 'production'
 })
 
 module.exports = webpackConfig;
