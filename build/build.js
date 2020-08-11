@@ -1,17 +1,14 @@
 'use strict'
 
-// 设置环境变量
-const env = process.env.NODE_ENV = process.argv[2] || 'dev';
-
 const ora = require('ora');
 const rm = require('rimraf');
 const path = require('path');
 const chalk = require('chalk');
 const webpack = require('webpack');
 const config = require('./config');
-const webpackConfig = require('./webpack.prod.js');
+const webpackConfig = require('./webpack.build.js');
 
-const spinner = ora('building for prod...');
+const spinner = ora('building for library...');
 spinner.start()
 
 rm(path.join(config.outPath, config.assetsSubDirectory), err => {

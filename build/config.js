@@ -8,12 +8,8 @@ module.exports = {
     outPath: path.resolve(__dirname, './dist'),//打包路径
     dev: {
         env: 'dev',
-        assetsPublicPath: '/',
     },
-    prod: {
+    build: {
         env: 'prod',
-        assetsPublicPath: '//cdn1.com',
-
-
     }
 }

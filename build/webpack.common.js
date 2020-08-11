@@ -15,6 +15,14 @@ module.exports =  {
         path: config.outPath,
         publicPath: '/'
     },
+    resolve: {//对extensions指定的类型的文件引用时路径可以使用别名
+        extensions: ['.js', '.vue', '.json', '.scss', '.css'],
+        alias: {
+            '@': path.resolve(__dirname, '../src'),
+            'Assets': path.resolve(__dirname, '../src/assets'),
+            'Coms': path.resolve(__dirname, '../src/components'),
+        }
+    },
     module: {
         rules: [
             {
@@ -56,12 +64,17 @@ module.exports =  {
                 }
             },
             {
+                test: /\.svg$/,
+                loader: 'svg-sprite-loader',
+                include: [path.resolve(__dirname, '../src/assets/fonts')]
+            },
+            {
                 test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
                 loader: 'url-loader',
+                exclude: [path.resolve(__dirname,'../src/assets/fonts')],// 由于fonts下面的svg的文件名要作为svg的id,所以不能加hash
                 options: {
                     limit: 100,
                     name: utils.assetsPath('img/[name].[hash:7].[ext]'),
-                    publicPath: config[env].assetsPublicPath
                 }
             },
             {
@@ -84,8 +97,7 @@ module.exports =  {
         }),
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-                CDN_PATH: JSON.stringify(config[env].assetsPublicPath)
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
             }
         }),
         // 请确保引入这个插件！
