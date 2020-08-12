@@ -1,7 +1,7 @@
 <template>
     <div style="display: inline-block">
         <button @click="handleClick">展示dialog</button>
-        <Dialog :isShow.sync="isDialogShow"
+        <VDialog :isShow.sync="isDialogShow"
                 title="提示"
                 msg="这是一个dialog组件实现的对话框"
                 :hasNo="true"
@@ -13,17 +13,17 @@
                 @onNo="handleNo"
                 @onYes="handleYes"
                 @onClose="handleClose"
-        ></Dialog>
+        ></VDialog>
     </div>
 </template>
 
 <script>
 /* 组件形式 */
-import { Dialog } from '../../dist'
+import { VDialog } from '../../dist'
 
 export default {
     name: 'html-com',
-    components: { Dialog },
+    components: { VDialog },
     data() {
         return {
             isDialogShow: false

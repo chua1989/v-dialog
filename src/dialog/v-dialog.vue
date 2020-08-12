@@ -37,7 +37,7 @@
 import 'Assets/fonts/index'
 import Icon from 'Coms/icon/icon.vue'
 export default {
-    name: 'dialog',
+    name: 'v-dialog',
     components: {
         Icon
     },

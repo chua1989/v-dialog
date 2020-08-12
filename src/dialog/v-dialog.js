@@ -18,7 +18,7 @@
     });
  */
 import Vue from 'vue';
-import Dialog from './dialog.vue';
+import Dialog from './v-dialog.vue';
 let DialogExtend = Vue.extend(Dialog);
 
 // 所有的dialog应当只有一个实例
