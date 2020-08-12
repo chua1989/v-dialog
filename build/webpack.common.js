@@ -29,9 +29,8 @@ module.exports =  {
                 loader: 'eslint-loader',
                 enforce: 'pre',//加载优先级最高
                 include: [
-                    path.resolve(__dirname, '../src'),
-                    path.resolve(__dirname, '../demo')
-                ],
+                    path.resolve(__dirname, '../src')
+                ].concat(env === 'dev'? [path.resolve(__dirname, '../demo')]: []),
                 options: {
                     formatter: require('eslint-friendly-formatter'),
                     emitWarning: true
@@ -39,13 +38,7 @@ module.exports =  {
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader',
-                options:{
-                    // 添加vue中html部分直接引用静态资源的解析.vue-loader默认配置里面没有audio，见：https://vue-loader.vuejs.org/zh/options.html#transformasseturls
-                    transformAssetUrls: {
-                        audio: 'src'
-                    }
-                }
+                loader: 'vue-loader'
             },
             ...utils.cssLoaders(),//配置css的loader
             {
@@ -53,8 +46,7 @@ module.exports =  {
                 // loader: 'babel-loader',
                 include: [
                     path.resolve(__dirname, '../src'),
-                    path.resolve(__dirname, '../demo'),
-                ],
+                ].concat(env === 'dev'? [path.resolve(__dirname, '../demo')]: []),
                 use: {
                     loader: 'babel-loader',
                     options: {
