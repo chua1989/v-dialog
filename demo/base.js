@@ -1,5 +1,4 @@
 /* 第三方库 */
-import 'babel-polyfill'
 import Vue from 'vue'
 /* 本地库 */
 import { $vDialog } from '../dist/index'

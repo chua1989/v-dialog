@@ -1,5 +1,5 @@
 <template>
-    <div style="display: inline-block">
+    <div style="margin-top: 20px;">
         <button @click="handleClick">展示dialog</button>
         <VDialog :isShow.sync="isDialogShow"
                 title="提示"
@@ -28,6 +28,9 @@ export default {
         return {
             isDialogShow: false
         }
+    },
+    mounted() {
+        this.handleClick()
     },
     methods: {
         handleClick() {
