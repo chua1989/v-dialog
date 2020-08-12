@@ -36,8 +36,6 @@ exports.entries = function () {
     return map;
 }
 
-
-
 /*
 打包结果剥离出文件名称和文件夹名称相同的html文件，将这类型的html向上提一个文件夹层级，避免html文件访问太复杂。
 比如：/pages/index/index.html 提一个文件夹层级--> /pages/index.html
@@ -47,6 +45,7 @@ function uperSameNameOfFolderAndFile(fileName){
     let realName = fileName.replace(/((^|[/\\])([\w-]+))([/\\]\3.html)$/, '$1.html');
     return realName;
 }
+
 /*
 * @author chua 2019.5.15
 * @description 多页面输出配置
@@ -88,7 +87,7 @@ exports.htmlPlugin = function () {
 * @description 对开发环境和现网环境配置不同的css处理。
 * @return {Object} map 对应的css配置
 * */
-exports.cssLoaders = function(env){
+exports.cssLoaders = function(){
     // 使用css modules
     let cssModulesLoader = {
         loader: 'css-loader',
@@ -99,8 +98,8 @@ exports.cssLoaders = function(env){
             camelCase: true
         }
     };
-    if(env === 'dev'){
-        return [{
+    return [
+        {
             test: /\.css$/,
             oneOf: [
                 // 这里匹配 `<style module>`
@@ -127,35 +126,7 @@ exports.cssLoaders = function(env){
                     use: ['vue-style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
                 }
             ],
-        }]
-    }else{
-        return [{
-            test: /\.css$/,
-            oneOf: [
-                // 这里匹配 `<style module>`
-                {
-                    resourceQuery: /module/,
-                    use: [cssModulesLoader, 'postcss-loader']
-                },
-                // 这里匹配普通的 `<style>` 或 `<style scoped>`或其他外部css
-                {
-                    use: ['css-loader', 'postcss-loader']
-                }
-            ]
-        },
-        {
-            test: /\.scss$/,
-            oneOf: [
-                // 这里匹配 `<style module>`
-                {
-                    resourceQuery: /module/,
-                    use: [cssModulesLoader, 'postcss-loader', 'sass-loader']
-                },
-                // 这里匹配普通的 `<style>` 或 `<style scoped>`或者其他外部scss
-                {
-                    use: ['css-loader', 'postcss-loader', 'sass-loader']
-                }
-            ]
-        }]
-    }
+        }
+    ]
+
 }

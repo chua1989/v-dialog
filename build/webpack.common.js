@@ -9,7 +9,6 @@ const env = process.env.NODE_ENV = process.argv[2] || 'dev';// 设置环境变�
 
 module.exports =  {
     context: path.resolve(__dirname, '../'),//上下文环境
-    entry: utils.entries(),//多入口
     output: {
         filename: '[name].js',
         path: config.outPath,
@@ -48,7 +47,7 @@ module.exports =  {
                     }
                 }
             },
-            ...utils.cssLoaders(env),//配置css的loader
+            ...utils.cssLoaders(),//配置css的loader
             {
                 test: /\.js$/,
                 // loader: 'babel-loader',

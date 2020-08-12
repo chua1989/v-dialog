@@ -17,12 +17,15 @@
     "url": "https://github.com/chua1989/v-dialog/issues"
   },
   "homepage": "https://github.com/chua1989/v-dialog#readme",
+  "peerDependencies": {
+    "vue": ">2.0.0"
+  },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.6"
   },
   "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.6",
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "autoprefixer": "^9.5.1",

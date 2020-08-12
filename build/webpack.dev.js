@@ -6,6 +6,7 @@ const config = require('./config.js');
 const utils = require('./utils.js');
 
 module.exports = merge(common, {
+	entry: utils.entries(),//多入口
 	devtool: 'inline-source-map',
 	devServer: {
 		contentBase: config.outPath,
