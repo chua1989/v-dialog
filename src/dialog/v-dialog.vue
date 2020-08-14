@@ -48,7 +48,7 @@ export default {
         },
         title: {
             type: String,
-            default: '消息提示'
+            default: '提示'
         },
         msg: {
             type: String,
