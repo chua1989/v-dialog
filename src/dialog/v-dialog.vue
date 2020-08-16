@@ -7,8 +7,8 @@
                 <icon class="v-dialog-close" name="icon-x" @click="handleClose"></icon>
             </div>
             <div class="v-dialog-body">
-                <slot name="body"></slot>
                 <div class="v-dialog-content">{{msg}}</div>
+                <slot name="body"></slot>
             </div>
             <div class="v-dialog-foot">
                 <slot name="foot"></slot>
