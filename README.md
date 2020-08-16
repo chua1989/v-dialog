@@ -47,7 +47,7 @@ export default {
 ```
 <template>
     <div>
-        <v-dialog msg="这是一个dialog组件实现的对话框"></v-dialog>
+        <v-dialog :isShow.sync="isDialogShow" msg="这是一个dialog组件实现的对话框"></v-dialog>
     </div>
 </template>
 ```
@@ -70,7 +70,7 @@ export default {
 ```
 <template>
     <div>
-        <VDialog msg="这是一个dialog组件实现的对话框"></VDialog>
+        <VDialog :isShow.sync="isDialogShow" msg="这是一个dialog组件实现的对话框"></VDialog>
     </div>
 </template>
 
