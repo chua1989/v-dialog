@@ -1,8 +1,15 @@
-import VDialog from './dialog/index.js'
+/* 引入svg字体库 */
+import Vue from 'vue'
+import 'Assets/fonts/index'
+import Icon from 'Coms/icon/icon.vue'
+import VDialog from './dialog/index'
+import VToast from './toast/index'
+Vue.component('icon', Icon)
 
 const install = function(Vue, options = {}) {
     Vue.use(VDialog)
 
+    Vue.prototype.$toast = VToast
     Vue.prototype.$dialog = VDialog.func
 }
 //
@@ -13,10 +20,12 @@ const install = function(Vue, options = {}) {
 
 const all = {
     install,
-    VDialog
+    VDialog,
+    VToast
 }
 
 export {
     all as default,
-    VDialog
+    VDialog,
+    VToast
 }

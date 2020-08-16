@@ -18,6 +18,7 @@ import VDialog from './v-dialog.vue'
         onClose() {} // 关闭图标响应函数
     });
  */
+let DialogExtend = Vue.extend(VDialog);
 // 所有的dialog应当只有一个实例
 const dialogPup = function() {
     let instance; // 实例
@@ -26,7 +27,6 @@ const dialogPup = function() {
         if (instance && instance.visible) {
             return;
         }
-        let DialogExtend = Vue.extend(VDialog);
         instance = new DialogExtend({
             propsData: options
         }).$mount();

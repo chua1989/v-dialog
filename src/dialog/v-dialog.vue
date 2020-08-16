@@ -33,14 +33,9 @@
 </template>
 
 <script>
-/* 引入svg字体库 */
-import 'Assets/fonts/index'
-import Icon from 'Coms/icon/icon.vue'
+
 export default {
     name: 'v-dialog',
-    components: {
-        Icon
-    },
     props: {
         isShow: {
             type: Boolean,
