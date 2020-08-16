@@ -1,24 +1,24 @@
 <template>
-    <div v-if="visible" class="mask" :style="{zIndex: zIndex}">
-        <div class="dialog">
-            <div class="head" :style="{ backgroundColor: themeColor}">
-                <div class="title">{{title}}</div>
+    <div v-if="visible" class="v-dialog-mask" :style="{zIndex: zIndex}">
+        <div class="v-dialog-dialog">
+            <div class="v-dialog-head" :style="{ backgroundColor: themeColor}">
+                <div class="v-dialog-title">{{title}}</div>
                 <slot name="header"></slot>
-                <icon class="close" name="icon-x" @click="handleClose"></icon>
+                <icon class="v-dialog-close" name="icon-x" @click="handleClose"></icon>
             </div>
-            <div class="body">
+            <div class="v-dialog-body">
                 <slot name="body"></slot>
-                <div class="content">{{msg}}</div>
+                <div class="v-dialog-content">{{msg}}</div>
             </div>
-            <div class="foot">
+            <div class="v-dialog-foot">
                 <slot name="foot"></slot>
                 <input v-if="hasNo"
-                       class="no"
+                       class="v-dialog-no"
                        :value="noText"
                        type="button"
                        @click="handleNo" >
                 <input v-if="hasYes"
-                       class="yes"
+                       class="v-dialog-yes"
                        :style="{
                            backgroundColor: themeColor,
                            borderColor: themeColor
@@ -135,7 +135,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .mask{
+    .v-dialog-mask {
         position: fixed;
         top: 0;
         bottom: 0;
@@ -153,7 +153,7 @@ export default {
             vertical-align: middle;
         }
     }
-    .dialog{
+    .v-dialog-dialog {
         display: inline-block;
         vertical-align: middle;
         box-sizing: border-box;
@@ -162,7 +162,7 @@ export default {
         background-color: #fff;
         color: #646464;
         overflow: hidden;
-        .head{
+        .v-dialog-head {
             width: 100%;
             height: 50px;
             padding: 14px 27px;
@@ -176,39 +176,39 @@ export default {
                 content: '';
                 clear: both;
             }
-            .title{
+            .v-dialog-title {
                 float: left;
                 display: inline-block;
                 font-size: 20px;
                 line-height: 20px;
             }
-            .close{
+            .v-dialog-close {
                 float: right;
                 font-size: 20px;
                 color: #fff;
                 cursor: pointer;
             }
         }
-        .body{
+        .v-dialog-body {
             font-size: 0;
             padding: 52px 27px;
             text-align: left;
             border-bottom: 02px solid #F1F1F1;
-            .content{
+            .v-dialog-content {
                 display: inline-block;
                 white-space: pre-wrap;
                 text-align: left;
                 font-size: 16px;
             }
         }
-        .foot{
+        .v-dialog-foot {
             height: 70px;
             box-sizing: border-box;
             font-size: 0;
             padding: 15px 25px 15px 0;
             text-align: right;
-            .no,
-            .yes{
+            .v-dialog-no,
+            .v-dialog-yes {
                 padding: 10px 44px ;
                 font-size: 16px;
                 cursor: pointer;
@@ -224,7 +224,7 @@ export default {
                 -webkit-appearance: none; /*去除系统默认的样式,比如iphone上的上边框*/
                 -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 点击高亮的颜色*/
             }
-            .no{
+            .v-dialog-no {
                 padding: 10px 44px ;
                 display: inline-block;
                 box-sizing: border-box;
@@ -237,7 +237,7 @@ export default {
                     border-color: #ddd;
                 }
             }
-            .yes{
+            .v-dialog-yes {
                 display: inline-block;
                 color: #fff;
                 overflow: hidden;

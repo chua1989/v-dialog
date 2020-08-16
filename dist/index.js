@@ -191,7 +191,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     title: {
       type: String,
-      "default": '消息提示'
+      "default": '提示'
     },
     msg: {
       type: String,
@@ -287,7 +287,7 @@ __webpack_require__.r(__webpack_exports__);
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n.mask {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  text-align: center;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 100;\n}\n.mask:after {\n    content: \"\";\n    display: inline-block;\n    height: 100%;\n    width: 0;\n    vertical-align: middle;\n}\n.dialog {\n  display: inline-block;\n  vertical-align: middle;\n  box-sizing: border-box;\n  width: 480px;\n  border-radius: 12px;\n  background-color: #fff;\n  color: #646464;\n  overflow: hidden;\n}\n.dialog .head {\n    width: 100%;\n    height: 50px;\n    padding: 14px 27px;\n    color: #fff;\n    font-size: 20px;\n    text-align: left;\n    box-sizing: border-box;\n}\n.dialog .head:before, .dialog .head:after {\n      display: block;\n      content: '';\n      clear: both;\n}\n.dialog .head .title {\n      float: left;\n      display: inline-block;\n      font-size: 20px;\n      line-height: 20px;\n}\n.dialog .head .close {\n      float: right;\n      font-size: 20px;\n      color: #fff;\n      cursor: pointer;\n}\n.dialog .body {\n    font-size: 0;\n    padding: 52px 27px;\n    text-align: left;\n    border-bottom: 02px solid #F1F1F1;\n}\n.dialog .body .content {\n      display: inline-block;\n      white-space: pre-wrap;\n      text-align: left;\n      font-size: 16px;\n}\n.dialog .foot {\n    height: 70px;\n    box-sizing: border-box;\n    font-size: 0;\n    padding: 15px 25px 15px 0;\n    text-align: right;\n}\n.dialog .foot .no,\n    .dialog .foot .yes {\n      padding: 10px 44px;\n      font-size: 16px;\n      cursor: pointer;\n      height: auto;\n      text-indent: 0;\n      border-radius: 20px;\n      line-height: 16px;\n      border: 2px solid transparent;\n      outline-style: none;\n      /*取消focus外边框 */\n      -webkit-user-select: auto;\n      /*webkit浏览器*/\n      outline: none;\n      -webkit-appearance: none;\n      /*去除系统默认的样式,比如iphone上的上边框*/\n      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n      /* 点击高亮的颜色*/\n}\n.dialog .foot .no {\n      padding: 10px 44px;\n      display: inline-block;\n      box-sizing: border-box;\n      margin-right: 20px;\n      color: #646464;\n      background: #fff;\n      overflow: hidden;\n      border: 02px solid #eee;\n}\n.dialog .foot .no:hover {\n        border-color: #ddd;\n}\n.dialog .foot .yes {\n      display: inline-block;\n      color: #fff;\n      overflow: hidden;\n}\n.dialog .foot .yes:hover {\n        opacity: .7;\n}\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.v-dialog-mask {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  text-align: center;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 100;\n}\n.v-dialog-mask:after {\n    content: \"\";\n    display: inline-block;\n    height: 100%;\n    width: 0;\n    vertical-align: middle;\n}\n.v-dialog-dialog {\n  display: inline-block;\n  vertical-align: middle;\n  box-sizing: border-box;\n  width: 480px;\n  border-radius: 12px;\n  background-color: #fff;\n  color: #646464;\n  overflow: hidden;\n}\n.v-dialog-dialog .v-dialog-head {\n    width: 100%;\n    height: 50px;\n    padding: 14px 27px;\n    color: #fff;\n    font-size: 20px;\n    text-align: left;\n    box-sizing: border-box;\n}\n.v-dialog-dialog .v-dialog-head:before, .v-dialog-dialog .v-dialog-head:after {\n      display: block;\n      content: '';\n      clear: both;\n}\n.v-dialog-dialog .v-dialog-head .v-dialog-title {\n      float: left;\n      display: inline-block;\n      font-size: 20px;\n      line-height: 20px;\n}\n.v-dialog-dialog .v-dialog-head .v-dialog-close {\n      float: right;\n      font-size: 20px;\n      color: #fff;\n      cursor: pointer;\n}\n.v-dialog-dialog .v-dialog-body {\n    font-size: 0;\n    padding: 52px 27px;\n    text-align: left;\n    border-bottom: 02px solid #F1F1F1;\n}\n.v-dialog-dialog .v-dialog-body .v-dialog-content {\n      display: inline-block;\n      white-space: pre-wrap;\n      text-align: left;\n      font-size: 16px;\n}\n.v-dialog-dialog .v-dialog-foot {\n    height: 70px;\n    box-sizing: border-box;\n    font-size: 0;\n    padding: 15px 25px 15px 0;\n    text-align: right;\n}\n.v-dialog-dialog .v-dialog-foot .v-dialog-no,\n    .v-dialog-dialog .v-dialog-foot .v-dialog-yes {\n      padding: 10px 44px;\n      font-size: 16px;\n      cursor: pointer;\n      height: auto;\n      text-indent: 0;\n      border-radius: 20px;\n      line-height: 16px;\n      border: 2px solid transparent;\n      outline-style: none;\n      /*取消focus外边框 */\n      -webkit-user-select: auto;\n      /*webkit浏览器*/\n      outline: none;\n      -webkit-appearance: none;\n      /*去除系统默认的样式,比如iphone上的上边框*/\n      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n      /* 点击高亮的颜色*/\n}\n.v-dialog-dialog .v-dialog-foot .v-dialog-no {\n      padding: 10px 44px;\n      display: inline-block;\n      box-sizing: border-box;\n      margin-right: 20px;\n      color: #646464;\n      background: #fff;\n      overflow: hidden;\n      border: 02px solid #eee;\n}\n.v-dialog-dialog .v-dialog-foot .v-dialog-no:hover {\n        border-color: #ddd;\n}\n.v-dialog-dialog .v-dialog-foot .v-dialog-yes {\n      display: inline-block;\n      color: #fff;\n      overflow: hidden;\n}\n.v-dialog-dialog .v-dialog-foot .v-dialog-yes:hover {\n        opacity: .7;\n}\n", ""]);
 
 
 
@@ -2220,70 +2220,81 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.visible
-    ? _c("div", { staticClass: "mask", style: { zIndex: _vm.zIndex } }, [
-        _c("div", { staticClass: "dialog" }, [
-          _c(
-            "div",
-            { staticClass: "head", style: { backgroundColor: _vm.themeColor } },
-            [
-              _c("div", { staticClass: "title" }, [_vm._v(_vm._s(_vm.title))]),
-              _vm._v(" "),
-              _vm._t("header"),
-              _vm._v(" "),
-              _c("icon", {
-                staticClass: "close",
-                attrs: { name: "icon-x" },
-                on: { click: _vm.handleClose }
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "body" },
-            [
-              _vm._t("body"),
-              _vm._v(" "),
-              _c("div", { staticClass: "content" }, [_vm._v(_vm._s(_vm.msg))])
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "foot" },
-            [
-              _vm._t("foot"),
-              _vm._v(" "),
-              _vm.hasNo
-                ? _c("input", {
-                    staticClass: "no",
-                    attrs: { value: _vm.noText, type: "button" },
-                    on: { click: _vm.handleNo }
-                  })
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.hasYes
-                ? _c("input", {
-                    staticClass: "yes",
-                    style: {
-                      backgroundColor: _vm.themeColor,
-                      borderColor: _vm.themeColor
-                    },
-                    attrs: {
-                      value: _vm.yesText,
-                      type: "button",
-                      autofocus: ""
-                    },
-                    on: { click: _vm.handleYes }
-                  })
-                : _vm._e()
-            ],
-            2
-          )
-        ])
-      ])
+    ? _c(
+        "div",
+        { staticClass: "v-dialog-mask", style: { zIndex: _vm.zIndex } },
+        [
+          _c("div", { staticClass: "v-dialog-dialog" }, [
+            _c(
+              "div",
+              {
+                staticClass: "v-dialog-head",
+                style: { backgroundColor: _vm.themeColor }
+              },
+              [
+                _c("div", { staticClass: "v-dialog-title" }, [
+                  _vm._v(_vm._s(_vm.title))
+                ]),
+                _vm._v(" "),
+                _vm._t("header"),
+                _vm._v(" "),
+                _c("icon", {
+                  staticClass: "v-dialog-close",
+                  attrs: { name: "icon-x" },
+                  on: { click: _vm.handleClose }
+                })
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "v-dialog-body" },
+              [
+                _vm._t("body"),
+                _vm._v(" "),
+                _c("div", { staticClass: "v-dialog-content" }, [
+                  _vm._v(_vm._s(_vm.msg))
+                ])
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "v-dialog-foot" },
+              [
+                _vm._t("foot"),
+                _vm._v(" "),
+                _vm.hasNo
+                  ? _c("input", {
+                      staticClass: "v-dialog-no",
+                      attrs: { value: _vm.noText, type: "button" },
+                      on: { click: _vm.handleNo }
+                    })
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.hasYes
+                  ? _c("input", {
+                      staticClass: "v-dialog-yes",
+                      style: {
+                        backgroundColor: _vm.themeColor,
+                        borderColor: _vm.themeColor
+                      },
+                      attrs: {
+                        value: _vm.yesText,
+                        type: "button",
+                        autofocus: ""
+                      },
+                      on: { click: _vm.handleYes }
+                    })
+                  : _vm._e()
+              ],
+              2
+            )
+          ])
+        ]
+      )
     : _vm._e()
 }
 var staticRenderFns = []
@@ -11435,10 +11446,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/dialog/v-dialog.js":
-/*!********************************!*\
-  !*** ./src/dialog/v-dialog.js ***!
-  \********************************/
+/***/ "./src/dialog/index.js":
+/*!*****************************!*\
+  !*** ./src/dialog/index.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11446,15 +11457,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
 /* harmony import */ var _v_dialog_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./v-dialog.vue */ "./src/dialog/v-dialog.vue");
+
+
 /**
  * author: chua
  * date: 2019.8.21
- * description: 简单错误/信息提示框
+ * description: 简单错误/信息提示框，外部调用
  * eg:
-    import {$dialog} from 'v-dialog';
-    // $dialog多次被调用，只展示最开始的那个
-    Vue.prototype.$dialog = $dialog;
-    $dialog({
+ import { Dialog } from '@chua1989/v-dialog';
+ // $dialog多次被调用，只展示最开始的那个
+ Dialog.func({
         msg: '警告！',
         hasNo: false, // 是否有no按钮
         hasYes: true, // 是否有yes按钮
@@ -11465,11 +11477,9 @@ __webpack_require__.r(__webpack_exports__);
         onClose() {} // 关闭图标响应函数
     });
  */
+// 所有的dialog应当只有一个实例
 
-
-var DialogExtend = vue__WEBPACK_IMPORTED_MODULE_0__["default"].extend(_v_dialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"]); // 所有的dialog应当只有一个实例
-
-function DialogPup() {
+var dialogPup = function dialogPup() {
   var instance; // 实例
 
   return function () {
@@ -11480,15 +11490,22 @@ function DialogPup() {
       return;
     }
 
+    var DialogExtend = vue__WEBPACK_IMPORTED_MODULE_0__["default"].extend(_v_dialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
     instance = new DialogExtend({
       propsData: options
     }).$mount();
     instance.visible = true;
     document.body.appendChild(instance.$el);
   };
-}
+};
 
-/* harmony default export */ __webpack_exports__["default"] = (DialogPup());
+var install = function install(Vue) {
+  Vue.component(_v_dialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"].name, _v_dialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
+};
+
+_v_dialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"].func = dialogPup();
+_v_dialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"].install = install;
+/* harmony default export */ __webpack_exports__["default"] = (_v_dialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
 /***/ }),
 
@@ -11583,19 +11600,32 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: $vDialog, VDialog */
+/*! exports provided: default, VDialog */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _dialog_v_dialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dialog/v-dialog */ "./src/dialog/v-dialog.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "$vDialog", function() { return _dialog_v_dialog__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-/* harmony import */ var _dialog_v_dialog_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dialog/v-dialog.vue */ "./src/dialog/v-dialog.vue");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDialog", function() { return _dialog_v_dialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return all; });
+/* harmony import */ var _dialog_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dialog/index.js */ "./src/dialog/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDialog", function() { return _dialog_index_js__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
+var install = function install(Vue) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  Vue.use(_dialog_index_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
+  Vue.prototype.$dialog = _dialog_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].func;
+}; //
+// if (typeof window !== 'undefined' && window.Vue) {
+//     // 注册所有组件
+//     install(window.Vue);
+// }
+
+
+var all = {
+  install: install,
+  VDialog: _dialog_index_js__WEBPACK_IMPORTED_MODULE_0__["default"]
+};
 
 
 /***/ })

@@ -1,7 +1,17 @@
-import './base';
-import Vue from 'vue';
+/* 第三方库 */
+import Vue from 'vue'
 import VueRouter from 'vue-router';
 import App from './app.vue';
+
+// 全部引入
+// import ALL from '../src'
+// Vue.use(ALL)
+
+// 按需引入
+import { VDialog } from '../src'
+Vue.use(VDialog)
+// Vue.component(VDialog.name, VDialog)
+Vue.prototype.$dialog = VDialog.func
 
 Vue.use(VueRouter);
 
