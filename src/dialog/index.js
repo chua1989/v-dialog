@@ -23,6 +23,12 @@ let DialogExtend = Vue.extend(VDialog);
 const dialogPup = function() {
     let instance; // 实例
     return function(options = {}) {
+        if (typeof options === 'string') {
+            options = {
+                msg: options
+            }
+        }
+
         // 如果dialog正在展示，则不做任何处理
         if (instance && instance.visible) {
             return;

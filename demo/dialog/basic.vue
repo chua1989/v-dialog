@@ -27,7 +27,7 @@ export default {
         }
     },
     mounted() {
-        this.handleClick()
+        this.$dialog('这是一个dialog的基本例子，通过函数直接调用')
     },
     methods: {
         handleClick() {

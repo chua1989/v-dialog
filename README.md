@@ -34,6 +34,8 @@ Vue.prototype.$dialog = VDialog.func
 <script>
 export default {
     mounted() {
+        this.$dialog('这是一个dialog的基本例子，通过函数直接调用')
+        // 或者
         this.$dialog({
             msg: '这是一个dialog的基本例子，通过函数直接调用'
         })
