@@ -1,7 +1,7 @@
 # v-dialog
 基于vue2.0的dialog组件  
 功能包括：dialog和toast。分为pc和h5版本   
-h5版本文档查看：[H5文档](https://github.com/chua1989/v-dialog/blob/master/README.md)  
+h5版本文档查看：[H5文档](https://github.com/chua1989/v-dialog/blob/master/doc/h5/README.md)  
 **代码安装**
 > npm install @chua1989/v-dialog --save
 
