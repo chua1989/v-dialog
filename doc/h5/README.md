@@ -4,7 +4,7 @@
 **代码安装**
 > npm install @chua1989/v-dialog --save  
 
-【注】h5默认使用rem作为单位，以750px宽度为标准作图经行缩放。请调整html的字体大小为
+【注】h5默认使用rem作为单位，以750px宽度为基准，为7.5rem。请调整html的字体大小为
 ```
 html{
     font-size:13.33333333vw;
