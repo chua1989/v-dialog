@@ -1,6 +1,6 @@
 {
   "name": "@chua1989/v-dialog",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "基于vue2的dialog组件",
   "main": "dist/index.js",
   "scripts": {
