@@ -172,17 +172,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'v-dialog-h5',
   props: {
     isShow: {
       type: Boolean,
       "default": false
-    },
-    title: {
-      type: String,
-      "default": '提示'
     },
     msg: {
       type: String,
@@ -408,6 +403,97 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/toast-h5/v-toast-h5.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4!./node_modules/vue-loader/lib??vue-loader-options!./src/toast-h5/v-toast-h5.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'v-toast-h5',
+  props: {
+    // 消息文字
+    msg: {
+      type: String,
+      "default": ''
+    },
+    // 显示时长，毫秒
+    duration: {
+      type: Number,
+      "default": 3000
+    },
+    isShow: {
+      type: Boolean,
+      "default": false
+    },
+    zIndex: {
+      type: Number,
+      "default": 101
+    },
+    // 关闭后的回调
+    onClose: {
+      type: Function,
+      "default": function _default() {}
+    }
+  },
+  data: function data() {
+    return {
+      closed: false,
+      // 用来判断消息框是否关闭
+      timer: null,
+      // 计时器
+      visible: this.isShow // 是否显示
+
+    };
+  },
+  mounted: function mounted() {
+    this.startTimer();
+  },
+  watch: {
+    isShow: function isShow(newVal) {
+      this.visible = newVal;
+    },
+    visible: function visible(newVal) {
+      // el-dialog的update:visible事件或手动更改dialogVisible都会进入该监听
+      // 更改props的visible属性
+      this.$emit('update:isShow', newVal);
+    }
+  },
+  methods: {
+    // 该函数主要用在接口调用toast时避免数据泄露。正常的组件调用是不必要调用的
+    handleAfterLeave: function handleAfterLeave() {
+      this.$destroy();
+      this.$el.parentNode.removeChild(this.$el);
+    },
+    handleClose: function handleClose() {
+      this.visible = false;
+      this.onClose && this.onClose();
+    },
+    startTimer: function startTimer() {
+      var _this = this;
+
+      this.timer = setTimeout(function () {
+        _this.handleClose();
+
+        clearTimeout(_this.timer);
+      }, this.duration);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/toast/v-toast.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4!./node_modules/vue-loader/lib??vue-loader-options!./src/toast/v-toast.vue?vue&type=script&lang=js& ***!
@@ -527,7 +613,7 @@ __webpack_require__.r(__webpack_exports__);
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".v-dialog-h5-mask {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  text-align: center;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 100;\n}\n.v-dialog-h5-mask:after {\n    content: \"\";\n    display: inline-block;\n    height: 100%;\n    width: 0;\n    vertical-align: middle;\n}\n.v-dialog-h5-dialog {\n  display: inline-block;\n  vertical-align: middle;\n  box-sizing: border-box;\n  width: 5.60rem;\n  border-radius: .12rem;\n  background-color: #fff;\n  color: #646464;\n}\n.v-dialog-h5-dialog .v-dialog-h5-head {\n    padding: .22rem .26rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-head:before, .v-dialog-h5-dialog .v-dialog-h5-head:after {\n      display: block;\n      content: '';\n      clear: both;\n}\n.v-dialog-h5-dialog .v-dialog-h5-head .v-dialog-h5-close {\n      float: right;\n      font-size: .30rem;\n      color: #979797;\n}\n.v-dialog-h5-dialog .v-dialog-h5-body {\n    font-size: 0;\n    padding: .42rem .44rem .22rem;\n    text-align: center;\n}\n.v-dialog-h5-dialog .v-dialog-h5-body .v-dialog-h5-content {\n      display: inline-block;\n      white-space: pre-wrap;\n      text-align: left;\n      font-size: .36rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot {\n    font-size: 0;\n    padding: .40rem;\n    text-align: center;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-no,\n    .v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-yes {\n      padding: .15rem .70rem;\n      font-size: .30rem;\n      cursor: pointer;\n      height: auto;\n      text-indent: 0;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-no {\n      display: inline-block;\n      box-sizing: border-box;\n      margin-right: .32rem;\n      border-radius: .12rem;\n      color: #646464;\n      background: #FFFFFF;\n      overflow: hidden;\n      border: .02rem solid #F1F1F1;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-yes {\n      display: inline-block;\n      border-radius: .12rem;\n      color: #FFFFFF;\n      background: #FF9E00;\n      overflow: hidden;\n}\n@media (min-width: 560px) {\n.v-dialog-h5-dialog {\n    width: 4.00rem;\n}\n.v-dialog-h5-dialog .head .v-dialog-h5-close {\n      font-size: .20rem;\n}\n.v-dialog-h5-dialog .body .v-dialog-h5-content {\n      font-size: .16rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot {\n      padding: .20rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-no,\n      .v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-yes {\n        padding: .09rem .30rem;\n        font-size: .16rem;\n        border-radius: .08rem;\n}\n.no-sound-icon {\n    width: 2.00rem;\n}\n}\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.v-dialog-h5-mask {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  text-align: center;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 100;\n}\n.v-dialog-h5-mask:after {\n    content: \"\";\n    display: inline-block;\n    height: 100%;\n    width: 0;\n    vertical-align: middle;\n}\n.v-dialog-h5-dialog {\n  display: inline-block;\n  vertical-align: middle;\n  box-sizing: border-box;\n  width: 5.60rem;\n  border-radius: .12rem;\n  background-color: #fff;\n  color: #646464;\n}\n.v-dialog-h5-dialog .v-dialog-h5-head {\n    padding: .22rem .26rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-head:before, .v-dialog-h5-dialog .v-dialog-h5-head:after {\n      display: block;\n      content: '';\n      clear: both;\n}\n.v-dialog-h5-dialog .v-dialog-h5-head .v-dialog-h5-close {\n      float: right;\n      font-size: .30rem;\n      color: #979797;\n}\n.v-dialog-h5-dialog .v-dialog-h5-body {\n    font-size: 0;\n    padding: .42rem .44rem .22rem;\n    text-align: center;\n}\n.v-dialog-h5-dialog .v-dialog-h5-body .v-dialog-h5-content {\n      display: inline-block;\n      white-space: pre-wrap;\n      text-align: left;\n      font-size: .36rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot {\n    font-size: 0;\n    padding: .40rem;\n    text-align: center;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-no,\n    .v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-yes {\n      padding: .15rem .70rem;\n      font-size: .30rem;\n      cursor: pointer;\n      height: auto;\n      text-indent: 0;\n      border: 2px solid transparent;\n      outline-style: none;\n      /*取消focus外边框 */\n      -webkit-user-select: auto;\n      /*webkit浏览器*/\n      outline: none;\n      -webkit-appearance: none;\n      /*去除系统默认的样式,比如iphone上的上边框*/\n      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n      /* 点击高亮的颜色*/\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-no {\n      display: inline-block;\n      box-sizing: border-box;\n      margin-right: .32rem;\n      border-radius: .12rem;\n      color: #646464;\n      background: #FFFFFF;\n      overflow: hidden;\n      border: .02rem solid #F1F1F1;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-yes {\n      display: inline-block;\n      border-radius: .12rem;\n      color: #FFFFFF;\n      overflow: hidden;\n}\n@media (min-width: 560px) {\n.v-dialog-h5-dialog {\n    width: 4.00rem;\n}\n.v-dialog-h5-dialog .head .v-dialog-h5-close {\n      font-size: .20rem;\n}\n.v-dialog-h5-dialog .body .v-dialog-h5-content {\n      font-size: .16rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot {\n      padding: .20rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-no,\n      .v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-yes {\n        padding: .09rem .30rem;\n        font-size: .16rem;\n        border-radius: .08rem;\n}\n.no-sound-icon {\n    width: 2.00rem;\n}\n}\n", ""]);
 
 
 
@@ -543,6 +629,21 @@ exports.push([module.i, ".v-dialog-h5-mask {\n  position: fixed;\n  top: 0;\n  b
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, "@charset \"UTF-8\";\n.v-dialog-mask {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  text-align: center;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 100;\n}\n.v-dialog-mask:after {\n    content: \"\";\n    display: inline-block;\n    height: 100%;\n    width: 0;\n    vertical-align: middle;\n}\n.v-dialog-dialog {\n  display: inline-block;\n  vertical-align: middle;\n  box-sizing: border-box;\n  width: 480px;\n  border-radius: 12px;\n  background-color: #fff;\n  color: #646464;\n  overflow: hidden;\n}\n.v-dialog-dialog .v-dialog-head {\n    width: 100%;\n    height: 50px;\n    padding: 14px 27px;\n    color: #fff;\n    font-size: 20px;\n    text-align: left;\n    box-sizing: border-box;\n}\n.v-dialog-dialog .v-dialog-head:before, .v-dialog-dialog .v-dialog-head:after {\n      display: block;\n      content: '';\n      clear: both;\n}\n.v-dialog-dialog .v-dialog-head .v-dialog-title {\n      float: left;\n      display: inline-block;\n      font-size: 20px;\n      line-height: 20px;\n}\n.v-dialog-dialog .v-dialog-head .v-dialog-close {\n      float: right;\n      font-size: 20px;\n      color: #fff;\n      cursor: pointer;\n}\n.v-dialog-dialog .v-dialog-body {\n    font-size: 0;\n    padding: 52px 27px;\n    text-align: left;\n    border-bottom: 02px solid #F1F1F1;\n}\n.v-dialog-dialog .v-dialog-body .v-dialog-content {\n      display: inline-block;\n      white-space: pre-wrap;\n      text-align: left;\n      font-size: 16px;\n}\n.v-dialog-dialog .v-dialog-foot {\n    height: 70px;\n    box-sizing: border-box;\n    font-size: 0;\n    padding: 15px 25px 15px 0;\n    text-align: right;\n}\n.v-dialog-dialog .v-dialog-foot .v-dialog-no,\n    .v-dialog-dialog .v-dialog-foot .v-dialog-yes {\n      padding: 10px 44px;\n      font-size: 16px;\n      cursor: pointer;\n      height: auto;\n      text-indent: 0;\n      border-radius: 20px;\n      line-height: 16px;\n      border: 2px solid transparent;\n      outline-style: none;\n      /*取消focus外边框 */\n      -webkit-user-select: auto;\n      /*webkit浏览器*/\n      outline: none;\n      -webkit-appearance: none;\n      /*去除系统默认的样式,比如iphone上的上边框*/\n      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n      /* 点击高亮的颜色*/\n}\n.v-dialog-dialog .v-dialog-foot .v-dialog-no {\n      padding: 10px 44px;\n      display: inline-block;\n      box-sizing: border-box;\n      margin-right: 20px;\n      color: #646464;\n      background: #fff;\n      overflow: hidden;\n      border: 02px solid #eee;\n}\n.v-dialog-dialog .v-dialog-foot .v-dialog-no:hover {\n        border-color: #ddd;\n}\n.v-dialog-dialog .v-dialog-foot .v-dialog-yes {\n      display: inline-block;\n      color: #fff;\n      overflow: hidden;\n}\n.v-dialog-dialog .v-dialog-foot .v-dialog-yes:hover {\n        opacity: .7;\n}\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/toast-h5/v-toast-h5.vue?vue&type=style&index=0&lang=scss&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/toast-h5/v-toast-h5.vue?vue&type=style&index=0&lang=scss& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "@charset \"UTF-8\";\n.v-dialog-h5-toast-wrapper {\n  position: fixed;\n  width: 100%;\n  /* 必须设置，否则内部toast的max-width失效 */\n  left: 50vw;\n  bottom: 50vh;\n  z-index: 100;\n}\n.v-dialog-h5-toast-wrapper .v-dialog-h5-toast {\n    /*\n        如果外面不哦那个wrapper包裹，会导致max-width失效，toast宽度最多也就50%。\n        推测为left这类位置偏移属性导致浏览器认为节点的（最大宽度 = 父元素宽度 - 偏移宽度）导致\n        position: fixed;\n        left: 50vw;\n        bottom: 30vh;\n        */\n    display: inline-block;\n    box-sizing: border-box;\n    transform: translate(-50%, 0);\n    min-width: 40vw;\n    max-width: 90vw;\n    font-size: 36px;\n    line-height: 52px;\n    text-align: center;\n    padding: 20px 40px;\n    border-radius: 20px;\n    background-color: rgba(0, 0, 0, 0.4);\n    color: #fff;\n}\n", ""]);
 
 
 
@@ -2514,10 +2615,6 @@ var render = function() {
               "div",
               { staticClass: "v-dialog-h5-head" },
               [
-                _c("div", { staticClass: "v-dialog-h5-title" }, [
-                  _vm._v(_vm._s(_vm.title))
-                ]),
-                _vm._v(" "),
                 _vm._t("header"),
                 _vm._v(" "),
                 _c("icon", {
@@ -2674,6 +2771,43 @@ var render = function() {
               ],
               2
             )
+          ])
+        ]
+      )
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/toast-h5/v-toast-h5.vue?vue&type=template&id=4ee7bc86&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/toast-h5/v-toast-h5.vue?vue&type=template&id=4ee7bc86& ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.visible
+    ? _c(
+        "div",
+        {
+          staticClass: "v-dialog-h5-toast-wrapper",
+          style: { zIndex: _vm.zIndex }
+        },
+        [
+          _c("div", { staticClass: "v-dialog-h5-toast" }, [
+            _vm._v("\n        " + _vm._s(_vm.msg) + "\n    ")
           ])
         ]
       )
@@ -2895,6 +3029,27 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! ../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
 var update = add("74b936b7", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/toast-h5/v-toast-h5.vue?vue&type=style&index=0&lang=scss&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/toast-h5/v-toast-h5.vue?vue&type=style&index=0&lang=scss& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/postcss-loader/src!../../node_modules/sass-loader/dist/cjs.js!../../node_modules/vue-loader/lib??vue-loader-options!./v-toast-h5.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/toast-h5/v-toast-h5.vue?vue&type=style&index=0&lang=scss&");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("6de31e82", content, false, {});
 // Hot Module Replacement
 if(false) {}
 
@@ -12130,7 +12285,7 @@ var dialogPup = function dialogPup() {
     }
 
     instance = new DialogExtend({
-      data: options
+      propsData: options
     }).$mount();
     instance.visible = true;
     document.body.appendChild(instance.$el);
@@ -12395,7 +12550,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: default, VDialog, VDialogH5, VToast */
+/*! exports provided: default, VDialog, VDialogH5, VToast, VToastH5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12413,7 +12568,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _toast_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./toast/index */ "./src/toast/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VToast", function() { return _toast_index__WEBPACK_IMPORTED_MODULE_5__["default"]; });
 
+/* harmony import */ var _toast_h5_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./toast-h5/index */ "./src/toast-h5/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VToastH5", function() { return _toast_h5_index__WEBPACK_IMPORTED_MODULE_6__["default"]; });
+
 /* 引入svg字体库 */
+
 
 
 
@@ -12429,6 +12588,7 @@ var install = function install(Vue) {
   Vue.prototype.$dialog = _dialog_index__WEBPACK_IMPORTED_MODULE_3__["default"].func;
   Vue.prototype.$dialogH5 = _dialog_h5_index__WEBPACK_IMPORTED_MODULE_4__["default"].func;
   Vue.prototype.$toast = _toast_index__WEBPACK_IMPORTED_MODULE_5__["default"];
+  Vue.prototype.$toastH5 = _toast_h5_index__WEBPACK_IMPORTED_MODULE_6__["default"];
 }; //
 // if (typeof window !== 'undefined' && window.Vue) {
 //     // 注册所有组件
@@ -12440,8 +12600,155 @@ var all = {
   install: install,
   VDialog: _dialog_index__WEBPACK_IMPORTED_MODULE_3__["default"],
   VDialogH5: _dialog_h5_index__WEBPACK_IMPORTED_MODULE_4__["default"],
-  VToast: _toast_index__WEBPACK_IMPORTED_MODULE_5__["default"]
+  VToast: _toast_index__WEBPACK_IMPORTED_MODULE_5__["default"],
+  VToastH5: _toast_h5_index__WEBPACK_IMPORTED_MODULE_6__["default"]
 };
+
+
+/***/ }),
+
+/***/ "./src/toast-h5/index.js":
+/*!*******************************!*\
+  !*** ./src/toast-h5/index.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+/* harmony import */ var _v_toast_h5_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./v-toast-h5.vue */ "./src/toast-h5/v-toast-h5.vue");
+/**
+ * author: chua
+ * date: 2019.8.21
+ * description: h5 toast提示
+ * eg:
+    import toast from 'H5Coms/toast/toast';
+    toast('toast 例子');
+ */
+
+
+var ToastConstructor = vue__WEBPACK_IMPORTED_MODULE_0__["default"].extend(_v_toast_h5_vue__WEBPACK_IMPORTED_MODULE_1__["default"]); // 构造函数
+
+var seed = 1; // 计数
+
+var toastPup = function toastPup() {
+  var instance; // 实例
+
+  return function () {
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    // 如果有实例正在展示，则不做任何处理
+    if (instance && instance.visible) {
+      return;
+    }
+
+    if (typeof options === 'string') {
+      options = {
+        msg: options
+      };
+    }
+
+    var id = "toast_".concat(seed++);
+    instance = new ToastConstructor({
+      propsData: options
+    }).$mount();
+    instance.id = id;
+    instance.visible = true;
+    document.body.appendChild(instance.$el);
+    return instance;
+  };
+}; // toast同时只允许有一个实例
+
+
+var VToastH5 = toastPup();
+/* harmony default export */ __webpack_exports__["default"] = (VToastH5);
+
+/***/ }),
+
+/***/ "./src/toast-h5/v-toast-h5.vue":
+/*!*************************************!*\
+  !*** ./src/toast-h5/v-toast-h5.vue ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _v_toast_h5_vue_vue_type_template_id_4ee7bc86___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./v-toast-h5.vue?vue&type=template&id=4ee7bc86& */ "./src/toast-h5/v-toast-h5.vue?vue&type=template&id=4ee7bc86&");
+/* harmony import */ var _v_toast_h5_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./v-toast-h5.vue?vue&type=script&lang=js& */ "./src/toast-h5/v-toast-h5.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _v_toast_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./v-toast-h5.vue?vue&type=style&index=0&lang=scss& */ "./src/toast-h5/v-toast-h5.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _v_toast_h5_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _v_toast_h5_vue_vue_type_template_id_4ee7bc86___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _v_toast_h5_vue_vue_type_template_id_4ee7bc86___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/toast-h5/v-toast-h5.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/toast-h5/v-toast-h5.vue?vue&type=script&lang=js&":
+/*!**************************************************************!*\
+  !*** ./src/toast-h5/v-toast-h5.vue?vue&type=script&lang=js& ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/babel-loader/lib??ref--4!../../node_modules/vue-loader/lib??vue-loader-options!./v-toast-h5.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/toast-h5/v-toast-h5.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/toast-h5/v-toast-h5.vue?vue&type=style&index=0&lang=scss&":
+/*!***********************************************************************!*\
+  !*** ./src/toast-h5/v-toast-h5.vue?vue&type=style&index=0&lang=scss& ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-style-loader!../../node_modules/css-loader/dist/cjs.js!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/postcss-loader/src!../../node_modules/sass-loader/dist/cjs.js!../../node_modules/vue-loader/lib??vue-loader-options!./v-toast-h5.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/toast-h5/v-toast-h5.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./src/toast-h5/v-toast-h5.vue?vue&type=template&id=4ee7bc86&":
+/*!********************************************************************!*\
+  !*** ./src/toast-h5/v-toast-h5.vue?vue&type=template&id=4ee7bc86& ***!
+  \********************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_template_id_4ee7bc86___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../node_modules/vue-loader/lib??vue-loader-options!./v-toast-h5.vue?vue&type=template&id=4ee7bc86& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/toast-h5/v-toast-h5.vue?vue&type=template&id=4ee7bc86&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_template_id_4ee7bc86___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_v_toast_h5_vue_vue_type_template_id_4ee7bc86___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
 
 
 /***/ }),
@@ -12494,13 +12801,10 @@ var instanceMap = new Map();
 
 var VToast = function VToast() {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var callback = arguments.length > 1 ? arguments[1] : undefined;
-  var closeFn = callback || options.onClose;
 
   if (typeof options === 'string') {
     options = {
-      msg: options,
-      onClose: callback
+      msg: options
     };
   }
 
@@ -12513,6 +12817,8 @@ var VToast = function VToast() {
   if (instanceMap.has(id)) {
     return;
   }
+
+  var closeFn = options.onClose;
 
   options.onClose = function () {
     VToast.close(id, closeFn);
