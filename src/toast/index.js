@@ -30,12 +30,10 @@ let seed = 1; // 计数
 // 结构为[['toast_xx', instance]]
 let instanceMap = new Map()
 
-const VToast = (options = {}, callback) => {
-    let closeFn = callback || options.onClose
+const VToast = (options = {}) => {
     if (typeof options === 'string') {
         options = {
-            msg: options,
-            onClose: callback
+            msg: options
         }
     }
     firstTop = options.firstTop || 50
@@ -49,7 +47,7 @@ const VToast = (options = {}, callback) => {
     if (instanceMap.has(id)) {
         return
     }
-
+    let closeFn = options.onClose
     options.onClose = function() {
         VToast.close(id, closeFn)
     }

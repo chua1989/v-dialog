@@ -19,6 +19,7 @@ Vue.use(VueRouter);
 // 1. 定义 (路由) 组件。
 const DialogH5Basic = () => import('./dialog-h5/basic.vue')
 const DialogH5HtmlCom = () => import('./dialog-h5/html-com.vue')
+const ToastH5HtmlCom = () => import('./toast-h5/basic.vue')
 
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
@@ -26,7 +27,9 @@ const DialogH5HtmlCom = () => import('./dialog-h5/html-com.vue')
 // 或者，只是一个组件配置对象。
 const routes = [
     { path: '/dialog-h5/basic', component: DialogH5Basic },
-    { path: '/dialog-h5/html-com', component: DialogH5HtmlCom }
+    { path: '/dialog-h5/html-com', component: DialogH5HtmlCom },
+    { path: '/toast-h5/basic', component: ToastH5HtmlCom }
+
 ];
 
 // 3. 创建 router 实例，然后传 `routes` 配置

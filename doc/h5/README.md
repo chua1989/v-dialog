@@ -162,7 +162,7 @@ onClose: {
 // 必须先引入vue
 import Vue from 'vue'
 import { VToastH5 } from '@chua1989/v-dialog'
-Vue.prototype.$toast = VToastH5
+Vue.prototype.$toastH5 = VToastH5
 ```
 **使用**  
 函数调用
@@ -171,7 +171,7 @@ Vue.prototype.$toast = VToastH5
 <script>
 export default {
     mounted() {
-        this.$toast('这是一个toast的基本例子')
+        this.$toastH5('这是一个toast的基本例子')
     }
 }
 </script>
@@ -207,22 +207,15 @@ duration: {
     类型: Number,
     默认值: 3000，单位毫秒
 },
-type: {
-    描述：类型，支持error/success/warning/info四种类型，不同类型背景展示不同
-    类型: String,
-    默认值: 'info'
-},
+// h5的toast值提供简单的功能，所以不提供type字段
+/type: {},
 zIndex: {
     描述：toast框的z-index值
     类型: Number,
     默认值: 101
 },
-// 
-firstTop: {
-    描述：第一个toast到文档顶部的距离
-    类型: Number,
-    默认值: 50, 单位px
-},
+// h5的toast同一居中，所以不提供该字段
+// firstTop: {},
 // 由于同一时间只展示一个toast，所以不提供gap字段
 // gap: {},
 onClose: {

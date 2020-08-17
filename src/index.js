@@ -5,6 +5,7 @@ import Icon from 'Coms/icon/icon.vue'
 import VDialog from './dialog/index'
 import VDialogH5 from './dialog-h5/index'
 import VToast from './toast/index'
+import VToastH5 from './toast-h5/index'
 Vue.component('icon', Icon)
 
 const install = function(Vue, options = {}) {
@@ -14,6 +15,7 @@ const install = function(Vue, options = {}) {
     Vue.prototype.$dialog = VDialog.func
     Vue.prototype.$dialogH5 = VDialogH5.func
     Vue.prototype.$toast = VToast
+    Vue.prototype.$toastH5 = VToastH5
 }
 //
 // if (typeof window !== 'undefined' && window.Vue) {
@@ -25,12 +27,14 @@ const all = {
     install,
     VDialog,
     VDialogH5,
-    VToast
+    VToast,
+    VToastH5
 }
 
 export {
     all as default,
     VDialog,
     VDialogH5,
-    VToast
+    VToast,
+    VToastH5
 }
