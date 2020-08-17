@@ -95,11 +95,11 @@ export default {
             transform: translate(-50%, 0);
             min-width: 40vw;
             max-width: 90vw;
-            font-size: 36px;
-            line-height: 52px;
             text-align: center;
-            padding: 20px 40px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 26px;
             background-color: rgba(0, 0, 0, 0.4);
             color: #fff;
         }

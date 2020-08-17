@@ -10,6 +10,10 @@ html{
     font-size:13.33333333vw;
 }
 ```
+并且禁止缩放，使用
+```
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+```
 ## dialog-h5
 ### 用法一、全局配置
 **引入**  
