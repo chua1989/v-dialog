@@ -130,6 +130,145 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/dialog-h5/v-dialog-h5.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4!./node_modules/vue-loader/lib??vue-loader-options!./src/dialog-h5/v-dialog-h5.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'v-dialog-h5',
+  props: {
+    isShow: {
+      type: Boolean,
+      "default": false
+    },
+    title: {
+      type: String,
+      "default": '提示'
+    },
+    msg: {
+      type: String,
+      "default": ''
+    },
+    hasNo: {
+      type: Boolean,
+      "default": false
+    },
+    hasYes: {
+      type: Boolean,
+      "default": true
+    },
+    noText: {
+      type: String,
+      "default": '取消'
+    },
+    yesText: {
+      type: String,
+      "default": '确定'
+    },
+    // 主题颜色
+    themeColor: {
+      type: String,
+      "default": '#409eff'
+    },
+    zIndex: {
+      type: Number,
+      "default": 100
+    },
+    onNo: {
+      type: Function,
+      "default": function _default() {}
+    },
+    onYes: {
+      type: Function,
+      "default": function _default() {}
+    },
+    onClose: {
+      type: Function,
+      "default": function _default() {}
+    }
+  },
+  data: function data() {
+    return {
+      visible: this.isShow // 是否显示
+
+    };
+  },
+  watch: {
+    isShow: function isShow(newVal) {
+      this.visible = newVal;
+    },
+    visible: function visible(newVal) {
+      // el-dialog的update:visible事件或手动更改dialogVisible都会进入该监听
+      // 更改props的visible属性
+      this.$emit('update:isShow', newVal);
+    }
+  },
+  mounted: function mounted() {
+    // 让“确定”按钮获焦
+    this.$nextTick(function () {// 没有作用，待解决？？？？？？？
+      // this.$refs.yesBtn.focus();
+    });
+  },
+  methods: {
+    handleClose: function handleClose() {
+      this.visible = false;
+      this.onClose();
+      this.$emit('onClose');
+    },
+    handleNo: function handleNo() {
+      this.visible = false;
+      this.onNo();
+      this.$emit('onNo');
+    },
+    handleYes: function handleYes() {
+      this.visible = false;
+      this.onYes();
+      this.$emit('onYes');
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/dialog/v-dialog.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4!./node_modules/vue-loader/lib??vue-loader-options!./src/dialog/v-dialog.vue?vue&type=script&lang=js& ***!
@@ -376,6 +515,21 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/dialog-h5/v-dialog-h5.vue?vue&type=style&index=0&lang=scss&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/dialog-h5/v-dialog-h5.vue?vue&type=style&index=0&lang=scss& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".v-dialog-h5-mask {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  text-align: center;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 100;\n}\n.v-dialog-h5-mask:after {\n    content: \"\";\n    display: inline-block;\n    height: 100%;\n    width: 0;\n    vertical-align: middle;\n}\n.v-dialog-h5-dialog {\n  display: inline-block;\n  vertical-align: middle;\n  box-sizing: border-box;\n  width: 5.60rem;\n  border-radius: .12rem;\n  background-color: #fff;\n  color: #646464;\n}\n.v-dialog-h5-dialog .v-dialog-h5-head {\n    padding: .22rem .26rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-head:before, .v-dialog-h5-dialog .v-dialog-h5-head:after {\n      display: block;\n      content: '';\n      clear: both;\n}\n.v-dialog-h5-dialog .v-dialog-h5-head .v-dialog-h5-close {\n      float: right;\n      font-size: .30rem;\n      color: #979797;\n}\n.v-dialog-h5-dialog .v-dialog-h5-body {\n    font-size: 0;\n    padding: .42rem .44rem .22rem;\n    text-align: center;\n}\n.v-dialog-h5-dialog .v-dialog-h5-body .v-dialog-h5-content {\n      display: inline-block;\n      white-space: pre-wrap;\n      text-align: left;\n      font-size: .36rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot {\n    font-size: 0;\n    padding: .40rem;\n    text-align: center;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-no,\n    .v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-yes {\n      padding: .15rem .70rem;\n      font-size: .30rem;\n      cursor: pointer;\n      height: auto;\n      text-indent: 0;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-no {\n      display: inline-block;\n      box-sizing: border-box;\n      margin-right: .32rem;\n      border-radius: .12rem;\n      color: #646464;\n      background: #FFFFFF;\n      overflow: hidden;\n      border: .02rem solid #F1F1F1;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-yes {\n      display: inline-block;\n      border-radius: .12rem;\n      color: #FFFFFF;\n      background: #FF9E00;\n      overflow: hidden;\n}\n@media (min-width: 560px) {\n.v-dialog-h5-dialog {\n    width: 4.00rem;\n}\n.v-dialog-h5-dialog .head .v-dialog-h5-close {\n      font-size: .20rem;\n}\n.v-dialog-h5-dialog .body .v-dialog-h5-content {\n      font-size: .16rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot {\n      padding: .20rem;\n}\n.v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-no,\n      .v-dialog-h5-dialog .v-dialog-h5-foot .v-dialog-h5-yes {\n        padding: .09rem .30rem;\n        font-size: .16rem;\n        border-radius: .08rem;\n}\n.no-sound-icon {\n    width: 2.00rem;\n}\n}\n", ""]);
+
+
 
 /***/ }),
 
@@ -2335,6 +2489,103 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/dialog-h5/v-dialog-h5.vue?vue&type=template&id=6e758296&":
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/dialog-h5/v-dialog-h5.vue?vue&type=template&id=6e758296& ***!
+  \****************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.visible
+    ? _c(
+        "div",
+        { staticClass: "v-dialog-h5-mask", style: { zIndex: _vm.zIndex } },
+        [
+          _c("div", { staticClass: "v-dialog-h5-dialog" }, [
+            _c(
+              "div",
+              { staticClass: "v-dialog-h5-head" },
+              [
+                _c("div", { staticClass: "v-dialog-h5-title" }, [
+                  _vm._v(_vm._s(_vm.title))
+                ]),
+                _vm._v(" "),
+                _vm._t("header"),
+                _vm._v(" "),
+                _c("icon", {
+                  staticClass: "v-dialog-h5-close",
+                  attrs: { name: "icon-x" },
+                  on: { click: _vm.handleClose }
+                })
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "v-dialog-h5-body" },
+              [
+                _c("div", { staticClass: "v-dialog-h5-content" }, [
+                  _vm._v(_vm._s(_vm.msg))
+                ]),
+                _vm._v(" "),
+                _vm._t("body")
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "v-dialog-h5-foot" },
+              [
+                _vm._t("foot"),
+                _vm._v(" "),
+                _vm.hasNo
+                  ? _c("input", {
+                      staticClass: "v-dialog-h5-no",
+                      attrs: { value: _vm.noText, type: "button" },
+                      on: { click: _vm.handleNo }
+                    })
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.hasYes
+                  ? _c("input", {
+                      staticClass: "v-dialog-h5-yes",
+                      style: {
+                        backgroundColor: _vm.themeColor,
+                        borderColor: _vm.themeColor
+                      },
+                      attrs: {
+                        value: _vm.yesText,
+                        type: "button",
+                        autofocus: ""
+                      },
+                      on: { click: _vm.handleYes }
+                    })
+                  : _vm._e()
+              ],
+              2
+            )
+          ])
+        ]
+      )
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/dialog/v-dialog.vue?vue&type=template&id=38e5ccc6&":
 /*!**********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/dialog/v-dialog.vue?vue&type=template&id=38e5ccc6& ***!
@@ -2604,6 +2855,27 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/dialog-h5/v-dialog-h5.vue?vue&type=style&index=0&lang=scss&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/dialog-h5/v-dialog-h5.vue?vue&type=style&index=0&lang=scss& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/postcss-loader/src!../../node_modules/sass-loader/dist/cjs.js!../../node_modules/vue-loader/lib??vue-loader-options!./v-dialog-h5.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/dialog-h5/v-dialog-h5.vue?vue&type=style&index=0&lang=scss&");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("7e023f62", content, false, {});
+// Hot Module Replacement
+if(false) {}
 
 /***/ }),
 
@@ -11787,6 +12059,182 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/dialog-h5/index.js":
+/*!********************************!*\
+  !*** ./src/dialog-h5/index.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+/* harmony import */ var _v_dialog_h5_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./v-dialog-h5.vue */ "./src/dialog-h5/v-dialog-h5.vue");
+/**
+ * author: chua
+ * date: 2019.8.21
+ * description: h5 简单错误/信息提示框，样式基于rem. 以750px宽度作图， html{ font-size:13.33333333vw; }
+ * eg:
+    import dialog from 'H5Coms/dialog/dialog';
+    // 初始化一个dialog实例，可以有多个，同一个实例同时只展示一次
+    let Dialog = dialog();
+    Dialog({
+        msg: '警告！',
+        hasNo: false, // 是否有no按钮
+        hasYes: true, // 是否有yes按钮
+        noText: '取消', // no按钮文本
+        yesText: '确定', // yes按钮文本
+        onNo: function() {}, // no按钮响应函数
+        onYes: function() {}, // yes按钮响应函数
+        onClose: function() {} // 关闭图标响应函数
+    });
+ */
+
+
+/**
+ * author: chua
+ * date: 2019.8.21
+ * description: h5简单错误/信息提示框，外部调用
+ * eg:
+ import { VDialogH5 } from '@chua1989/v-dialog';
+ // $dialog多次被调用，只展示最开始的那个
+ VDialogH5.func({
+        msg: '警告！',
+        hasNo: false, // 是否有no按钮
+        hasYes: true, // 是否有yes按钮
+        noText: '取消', // no按钮文本
+        yesText: '确定', // yes按钮文本
+        onNo() {}, // no按钮响应函数
+        onYes() {}, // yes按钮响应函数
+        onClose() {} // 关闭图标响应函数
+    });
+ */
+
+var DialogExtend = vue__WEBPACK_IMPORTED_MODULE_0__["default"].extend(_v_dialog_h5_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+var dialogPup = function dialogPup() {
+  var instance; // 实例
+
+  return function () {
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    // 如果dialog正在展示，则不做任何处理
+    if (instance && instance.visible) {
+      return;
+    }
+
+    if (typeof options === 'string') {
+      options = {
+        msg: options
+      };
+    }
+
+    instance = new DialogExtend({
+      data: options
+    }).$mount();
+    instance.visible = true;
+    document.body.appendChild(instance.$el);
+  };
+};
+
+var install = function install(Vue) {
+  Vue.component(_v_dialog_h5_vue__WEBPACK_IMPORTED_MODULE_1__["default"].name, _v_dialog_h5_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
+};
+
+_v_dialog_h5_vue__WEBPACK_IMPORTED_MODULE_1__["default"].func = dialogPup(); // 所有的dialog应当只有一个实例
+
+_v_dialog_h5_vue__WEBPACK_IMPORTED_MODULE_1__["default"].install = install;
+/* harmony default export */ __webpack_exports__["default"] = (_v_dialog_h5_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+/***/ }),
+
+/***/ "./src/dialog-h5/v-dialog-h5.vue":
+/*!***************************************!*\
+  !*** ./src/dialog-h5/v-dialog-h5.vue ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _v_dialog_h5_vue_vue_type_template_id_6e758296___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./v-dialog-h5.vue?vue&type=template&id=6e758296& */ "./src/dialog-h5/v-dialog-h5.vue?vue&type=template&id=6e758296&");
+/* harmony import */ var _v_dialog_h5_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./v-dialog-h5.vue?vue&type=script&lang=js& */ "./src/dialog-h5/v-dialog-h5.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _v_dialog_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./v-dialog-h5.vue?vue&type=style&index=0&lang=scss& */ "./src/dialog-h5/v-dialog-h5.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _v_dialog_h5_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _v_dialog_h5_vue_vue_type_template_id_6e758296___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _v_dialog_h5_vue_vue_type_template_id_6e758296___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/dialog-h5/v-dialog-h5.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/dialog-h5/v-dialog-h5.vue?vue&type=script&lang=js&":
+/*!****************************************************************!*\
+  !*** ./src/dialog-h5/v-dialog-h5.vue?vue&type=script&lang=js& ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/babel-loader/lib??ref--4!../../node_modules/vue-loader/lib??vue-loader-options!./v-dialog-h5.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/dialog-h5/v-dialog-h5.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/dialog-h5/v-dialog-h5.vue?vue&type=style&index=0&lang=scss&":
+/*!*************************************************************************!*\
+  !*** ./src/dialog-h5/v-dialog-h5.vue?vue&type=style&index=0&lang=scss& ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-style-loader!../../node_modules/css-loader/dist/cjs.js!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/postcss-loader/src!../../node_modules/sass-loader/dist/cjs.js!../../node_modules/vue-loader/lib??vue-loader-options!./v-dialog-h5.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/dialog-h5/v-dialog-h5.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./src/dialog-h5/v-dialog-h5.vue?vue&type=template&id=6e758296&":
+/*!**********************************************************************!*\
+  !*** ./src/dialog-h5/v-dialog-h5.vue?vue&type=template&id=6e758296& ***!
+  \**********************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_template_id_6e758296___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../node_modules/vue-loader/lib??vue-loader-options!./v-dialog-h5.vue?vue&type=template&id=6e758296& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/dialog-h5/v-dialog-h5.vue?vue&type=template&id=6e758296&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_template_id_6e758296___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_v_dialog_h5_vue_vue_type_template_id_6e758296___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./src/dialog/index.js":
 /*!*****************************!*\
   !*** ./src/dialog/index.js ***!
@@ -11805,9 +12253,9 @@ __webpack_require__.r(__webpack_exports__);
  * date: 2019.8.21
  * description: 简单错误/信息提示框，外部调用
  * eg:
- import { Dialog } from '@chua1989/v-dialog';
+ import { VDialog } from '@chua1989/v-dialog';
  // $dialog多次被调用，只展示最开始的那个
- Dialog.func({
+ VDialog.func({
         msg: '警告！',
         hasNo: false, // 是否有no按钮
         hasYes: true, // 是否有yes按钮
@@ -11827,15 +12275,15 @@ var dialogPup = function dialogPup() {
   return function () {
     var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
+    // 如果dialog正在展示，则不做任何处理
+    if (instance && instance.visible) {
+      return;
+    }
+
     if (typeof options === 'string') {
       options = {
         msg: options
       };
-    } // 如果dialog正在展示，则不做任何处理
-
-
-    if (instance && instance.visible) {
-      return;
     }
 
     instance = new DialogExtend({
@@ -11947,7 +12395,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: default, VDialog, VToast */
+/*! exports provided: default, VDialog, VDialogH5, VToast */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11959,10 +12407,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dialog_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dialog/index */ "./src/dialog/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDialog", function() { return _dialog_index__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
-/* harmony import */ var _toast_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./toast/index */ "./src/toast/index.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VToast", function() { return _toast_index__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+/* harmony import */ var _dialog_h5_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dialog-h5/index */ "./src/dialog-h5/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDialogH5", function() { return _dialog_h5_index__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+
+/* harmony import */ var _toast_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./toast/index */ "./src/toast/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VToast", function() { return _toast_index__WEBPACK_IMPORTED_MODULE_5__["default"]; });
 
 /* 引入svg字体库 */
+
 
 
 
@@ -11973,8 +12425,10 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].component('icon', Coms_icon_icon_vue
 var install = function install(Vue) {
   var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   Vue.use(_dialog_index__WEBPACK_IMPORTED_MODULE_3__["default"]);
-  Vue.prototype.$toast = _toast_index__WEBPACK_IMPORTED_MODULE_4__["default"];
+  Vue.use(_dialog_h5_index__WEBPACK_IMPORTED_MODULE_4__["default"]);
   Vue.prototype.$dialog = _dialog_index__WEBPACK_IMPORTED_MODULE_3__["default"].func;
+  Vue.prototype.$dialogH5 = _dialog_h5_index__WEBPACK_IMPORTED_MODULE_4__["default"].func;
+  Vue.prototype.$toast = _toast_index__WEBPACK_IMPORTED_MODULE_5__["default"];
 }; //
 // if (typeof window !== 'undefined' && window.Vue) {
 //     // 注册所有组件
@@ -11985,7 +12439,8 @@ var install = function install(Vue) {
 var all = {
   install: install,
   VDialog: _dialog_index__WEBPACK_IMPORTED_MODULE_3__["default"],
-  VToast: _toast_index__WEBPACK_IMPORTED_MODULE_4__["default"]
+  VDialogH5: _dialog_h5_index__WEBPACK_IMPORTED_MODULE_4__["default"],
+  VToast: _toast_index__WEBPACK_IMPORTED_MODULE_5__["default"]
 };
 
 

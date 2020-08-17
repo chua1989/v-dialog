@@ -5,9 +5,9 @@ import VDialog from './v-dialog.vue'
  * date: 2019.8.21
  * description: 简单错误/信息提示框，外部调用
  * eg:
- import { Dialog } from '@chua1989/v-dialog';
+ import { VDialog } from '@chua1989/v-dialog';
  // $dialog多次被调用，只展示最开始的那个
- Dialog.func({
+ VDialog.func({
         msg: '警告！',
         hasNo: false, // 是否有no按钮
         hasYes: true, // 是否有yes按钮
@@ -23,16 +23,17 @@ let DialogExtend = Vue.extend(VDialog);
 const dialogPup = function() {
     let instance; // 实例
     return function(options = {}) {
+        // 如果dialog正在展示，则不做任何处理
+        if (instance && instance.visible) {
+            return;
+        }
+
         if (typeof options === 'string') {
             options = {
                 msg: options
             }
         }
 
-        // 如果dialog正在展示，则不做任何处理
-        if (instance && instance.visible) {
-            return;
-        }
         instance = new DialogExtend({
             propsData: options
         }).$mount();
