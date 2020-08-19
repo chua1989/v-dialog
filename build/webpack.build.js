@@ -13,7 +13,7 @@ const webpackConfig= merge(common, {
 		index: path.resolve(__dirname, '../src/index.js')
 	},
 	externals: {
-		Vue: 'vue'
+		vue: 'vue'
 	},
 	output: {
 		filename: '[name].js',

@@ -20,6 +20,7 @@ module.exports =  {
             '@': path.resolve(__dirname, '../src'),
             'Assets': path.resolve(__dirname, '../src/assets'),
             'Coms': path.resolve(__dirname, '../src/components'),
+            'vue$': 'vue/dist/vue.esm.js'
         }
     },
     module: {
