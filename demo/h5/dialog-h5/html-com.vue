@@ -20,7 +20,7 @@
 
 <script>
 /* 组件形式 */
-import { VDialogH5 } from '../../../src'
+import { VDialogH5 } from '../../../dist'
 export default {
     name: 'html-com',
     components: { VDialogH5 },

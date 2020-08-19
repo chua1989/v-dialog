@@ -1,6 +1,6 @@
 {
   "name": "@chua1989/v-dialog",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "基于vue2.0的dialog/toast组件，包括pc和h5两个版本。支持函数调用和组件调用。文档全面，容易上手 ",
   "main": "dist/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/chua1989/v-dialog#readme",
   "peerDependencies": {
-    "vue": ">2.0.0"
+    "vue": "^2.6.10"
   },
   "dependencies": {},
   "devDependencies": {

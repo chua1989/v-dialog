@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import App from './app.vue';
 
 // 全部引入
-import ALL from '../../src'
+import ALL from '../../dist'
 Vue.use(ALL)
 
 // 按需引入
